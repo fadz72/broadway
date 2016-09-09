@@ -12,11 +12,11 @@ before_action :find_play, only: [:show, :edit, :update, :destroy]
 	end
 
 	def new
-		@play = Play.new
+		@play = current_user.play.build
 	end
 
 	def create
-		@play = Play.new(play_params)
+		@play = current_user.play.build(play_params)
 		if @play.save
 			redirect_to root_path
 		else
