@@ -56,7 +56,7 @@ before_action :find_play, only: [:show, :edit, :update, :destroy]
 	private
 
 	def play_params
-		params.require(:play).permit(:title, :description, :director, :category_id)
+		params.require(:play).permit(:title, :description, :director, :category_id, :play_img)
 	end
 
 	def find_play
